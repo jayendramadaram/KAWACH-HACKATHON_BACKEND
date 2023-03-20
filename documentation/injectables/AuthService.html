@@ -1,0 +1,839 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>crudapp documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">crudapp documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/auth/auth.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <h3 id="controller-for-auth-related-jobs">Controller For Auth related Jobs</h3>
+<ul>
+<li>PrismaService for inserting and QUering UserData from <code>Postgres</code></li>
+<li>Config Servce for extracting Values [Jwt Secret] from <code>.env</code></li>
+<li>JwtService for Signing <code>Jwt</code> with UserID</li>
+<li>CACHA_MANAGER for redis supprt to store OTP with <code>ttl</code></li>
+</ul>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotpasswordLogic" >forgotpasswordLogic</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#JwtSign" >JwtSign</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginLogic" >loginLogic</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#signupLogic" >signupLogic</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyLogic" >verifyLogic</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(postgre: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, config: ConfigService, jwt: JwtService, cachemanager: Cache, otpsender: <a href="../injectables/OtpService.html" target="_self">OtpService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/auth/auth.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>postgre</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>config</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwt</td>
+                                                  
+                                                        <td>
+                                                                    <code>JwtService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cachemanager</td>
+                                                  
+                                                        <td>
+                                                                    <code>Cache</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>otpsender</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OtpService.html" target="_self" >OtpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotpasswordLogic"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>forgotpasswordLogic</b></span>
+                        <a href="#forgotpasswordLogic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotpasswordLogic(phonenum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/auth/auth.service.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Forgot PassWord Logic Generating Random OTP Followed By
+Storing it in Redis and Emailing the User His Otp</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>phonenum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JwtSign"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>JwtSign</b></span>
+                        <a href="#JwtSign"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>JwtSign(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/auth/auth.service.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Signing JWT with SecretKey with <code>15m</code> expiry</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginLogic"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>loginLogic</b></span>
+                        <a href="#loginLogic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginLogic(body: <a href="../classes/AuthLogin.html" target="_self">AuthLogin</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/auth/auth.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Finding User , Verfifying Password with Argon2 and signing Jwt</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="../classes/AuthLogin.html" target="_self" >AuthLogin</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signupLogic"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>signupLogic</b></span>
+                        <a href="#signupLogic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>signupLogic(body: <a href="../classes/AuthSignup.html" target="_self">AuthSignup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/auth/auth.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Using argon2 a better version of SHA to Hash the passwords
+and Creating User Object all edge cases are handled by Prisma and Nestjs</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="../classes/AuthSignup.html" target="_self" >AuthSignup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;literal type | object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyLogic"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>verifyLogic</b></span>
+                        <a href="#verifyLogic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyLogic(OTP: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, phonenum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/auth/auth.service.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Verify Otp Logic Where OTP is retrieved From Redis and verfied
+returns JWT</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OTP</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>phonenum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Injectable,
+  ForbiddenException,
+  Inject,
+  CACHE_MANAGER,
+} from &#x27;@nestjs/common&#x27;;
+import { AuthLogin, AuthSignup } from &#x27;src/Typings&#x27;;
+import * as argon from &#x27;argon2&#x27;;
+import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import { JwtService } from &#x27;@nestjs/jwt&#x27;;
+import { Cache } from &#x27;cache-manager&#x27;;
+import {
+  HttpException,
+  InternalServerErrorException,
+} from &#x27;@nestjs/common/exceptions&#x27;;
+import { HttpStatus } from &#x27;@nestjs/common/enums&#x27;;
+import { OtpService } from &#x27;src/otp/otp.service&#x27;;
+// import { MailService } from &#x27;src/mail/mail.service&#x27;;
+
+/**
+ * ### Controller For Auth related Jobs
+ * @constructor construstor is initiated with 4 Services
+ *  - PrismaService for inserting and QUering UserData from &#x60;Postgres&#x60;
+ *  - Config Servce for extracting Values [Jwt Secret] from &#x60;.env&#x60;
+ *  - JwtService for Signing &#x60;Jwt&#x60; with UserID
+ *  - CACHA_MANAGER for redis supprt to store OTP with &#x60;ttl&#x60;
+ */
+@Injectable()
+export class AuthService {
+  constructor(
+    private postgre: PrismaService,
+    private config: ConfigService,
+    private jwt: JwtService,
+    @Inject(CACHE_MANAGER) private cachemanager: Cache, //
+    private otpsender: OtpService,
+  ) {}
+
+  /**
+   * Using argon2 a better version of SHA to Hash the passwords
+   * and Creating User Object all edge cases are handled by Prisma and Nestjs
+   */
+  async signupLogic(body: AuthSignup): Promise&lt;{ Jwt: string } | object&gt; {
+    const hash &#x3D; await argon.hash(body.password);
+    try {
+      const user &#x3D; await this.postgre.user.create({
+        data: {
+          phnum: body.phnum,
+          password: hash,
+          username: body.username,
+        },
+      });
+      return {
+        Jwt: await this.JwtSign(user.id),
+      };
+    } catch (error) {
+      console.log(&#x27;here&#x27;, error.code);
+
+      if (error.code &#x3D;&#x3D; &#x27;P2002&#x27;) {
+        throw new ForbiddenException(&#x27;Credentials Already Taken&#x27;);
+      } else {
+        throw new HttpException(error, HttpStatus.FORBIDDEN);
+      }
+    }
+  }
+
+  /**
+   * Finding User , Verfifying Password with Argon2 and signing Jwt
+   */
+  async loginLogic(body: AuthLogin): Promise&lt;object&gt; {
+    const { phnum, password } &#x3D; body;
+
+    const user &#x3D; await this.postgre.user.findUnique({
+      where: {
+        phnum: phnum,
+      },
+    });
+    if (!user) {
+      throw new ForbiddenException(&#x27;Credentials incorrect&#x27;);
+    }
+    const pwMatches &#x3D; await argon.verify(user.password, password);
+    if (!pwMatches) throw new ForbiddenException(&#x27;Credentials incorrect&#x27;);
+
+    return {
+      Jwt: await this.JwtSign(user.id),
+    };
+  }
+
+  /**
+   * Forgot PassWord Logic Generating Random OTP Followed By
+   * Storing it in Redis and Emailing the User His Otp
+   */
+  async forgotpasswordLogic(phonenum: string): Promise&lt;object&gt; {
+    console.log(phonenum);
+    const user &#x3D; await this.postgre.user.findUnique({
+      where: {
+        phnum: phonenum,
+      },
+    });
+    if (!user) {
+      throw new ForbiddenException(&#x27;Credentials incorrect&#x27;);
+    }
+    const OTP &#x3D; Math.floor(Math.random() * 1000000);
+    await this.cachemanager.set(phonenum, OTP);
+    // await this.mailService.sendUserConfirmation(OTP, email);
+    const resp &#x3D; await this.otpsender.sendotp(OTP, &#x27;+91&#x27; + phonenum);
+    if (!resp)
+      throw new InternalServerErrorException(&#x27;Failed to execute request&#x27;);
+    return { message: &#x27;done&#x27; };
+  }
+
+  /**
+   * Verify Otp Logic Where OTP is retrieved From Redis and verfied
+   * returns JWT
+   */
+  async verifyLogic(OTP: number, phonenum: string): Promise&lt;object&gt; {
+    const cacheotp &#x3D; await this.cachemanager.get(phonenum);
+    if (!cacheotp) {
+      throw new ForbiddenException(&#x27;Session Expired or Not created&#x27;);
+    }
+    if (OTP &#x3D;&#x3D; cacheotp) {
+      const user &#x3D; await this.postgre.user.findUnique({
+        where: {
+          phnum: phonenum,
+        },
+      });
+      await this.cachemanager.del(phonenum);
+      return {
+        Jwt: await this.JwtSign(user.id),
+      };
+    } else {
+      throw new ForbiddenException(&#x27;Wrong Otp Enterred&#x27;);
+    }
+  }
+
+  /**
+   * Signing JWT with SecretKey with &#x60;15m&#x60; expiry
+   */
+  async JwtSign(userId: number): Promise&lt;string&gt; {
+    const payload &#x3D; {
+      sub: userId,
+    };
+    const secret &#x3D; this.config.get(&#x27;JWT_SECRET&#x27;);
+    const token &#x3D; await this.jwt.signAsync(payload, {
+      expiresIn: &#x27;1d&#x27;,
+      secret: secret,
+    });
+    return token;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
