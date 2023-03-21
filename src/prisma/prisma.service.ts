@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 /**
  * Implementing PrismaClient
+ * configure prisma client and coonect  it on module init
  */
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {

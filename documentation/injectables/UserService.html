@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Userservice service to handle user related CRUD</p>
+
+            </p>
 
 
 
@@ -105,7 +112,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/user/user.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/user/user.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -175,15 +182,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>editUser(User: <a href="../classes/EditUser.html" target="_self">EditUser</a>, dbuser: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    <code>editUser(User: <a href="../classes/EditUser.html" target="_self">EditUser</a>, dbuser: <a href="../classes/UserDTO.html" target="_self">UserDTO</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/user/user.service.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/user/user.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -218,7 +225,7 @@
                                 <tr>
                                     <td>dbuser</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="../classes/UserDTO.html" target="_self" >UserDTO</a></code>
                                     </td>
 
                                     <td>
@@ -252,13 +259,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
 import { ConfigService } from &#x27;@nestjs/config&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
-import { EditUser } from &#x27;src/Typings&#x27;;
+import { EditUser, UserDTO } from &#x27;src/Typings&#x27;;
 import * as argon from &#x27;argon2&#x27;;
+
+/**
+ * Userservice service to handle user related CRUD
+ */
 @Injectable()
 export class UserService {
   constructor(private postgre: PrismaService, private config: ConfigService) {}
 
-  async editUser(User: EditUser, dbuser: any) {
+  /**
+   *
+   * @param User @type  {EditUser}
+   * @param dbuser @type {UserDTO}
+   * @returns
+   */
+  async editUser(User: EditUser, dbuser: UserDTO) {
+    /**
+     * hash password from request payload if pas exisit
+     * update using postgres prisma ORM
+     */
     if (User.password) {
       const hash &#x3D; await argon.hash(User.password);
       delete User.password;

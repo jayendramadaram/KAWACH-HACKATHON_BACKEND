@@ -181,7 +181,8 @@
             <h3>Description</h3>
         </p>
         <p class="comment">
-            <p>Root Of the APP with request logging middleware implemented</p>
+            <p>Root Of the APP with request logging middleware implemented
+ @alias ServeStaticModule used for serving this docs over (docs)[/docs] Documentation is generated in <code>documentation</code> file</p>
 
         </p>
 
@@ -255,8 +256,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app.module.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app.module.ts:58</a></div>
                 </td>
             </tr>
 
@@ -328,12 +329,22 @@ import * as ReddiStore from &#x27;cache-manager-redis-store&#x27;;
 import { OtpService } from &#x27;./otp/otp.service&#x27;;
 import { AppController } from &#x27;./app/app.controller&#x27;;
 import { AppService } from &#x27;./app/app.service&#x27;;
+import { ServeStaticModule } from &#x27;@nestjs/serve-static&#x27;;
+import { join } from &#x27;path&#x27;;
 
 /**
  * Root Of the APP with request logging middleware implemented
+ *  @alias ServeStaticModule used for serving this docs over (docs)[/docs] Documentation is generated in &#x60;documentation&#x60; file
+ * @alias ConfigModule usedas Configservice to retrieve env elements
+ * @alias CacheModule used to init reddis cache store with ttl 1200 &#x60;20min&#x60;
  */
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, &#x27;..&#x27;, &#x27;documentation&#x27;),
+      serveRoot: &#x27;/docs&#x27;, // this will serve your files on /docs route
+    }),
+
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -347,11 +358,8 @@ import { AppService } from &#x27;./app/app.service&#x27;;
     }),
     AuthModule,
     PrismaModule,
-    // MailModule,
-
     UserModule,
     OtpModule,
-    // SavedPostModule,
   ],
   providers: [PrismaService, AppService],
   controllers: [AppController],
@@ -359,6 +367,7 @@ import { AppService } from &#x27;./app/app.service&#x27;;
 export class AppModule implements NestModule {
   /**
    * Configuring the middleware for routes
+   * @alias LogRequest middleware logs type of request and route
    */
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(LogRequest).forRoutes(&#x27;*&#x27;);

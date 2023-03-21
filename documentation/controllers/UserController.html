@@ -66,17 +66,6 @@
             </p>
 
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Controller for User routs</p>
-<ul>
-<li>get UserInfo and Saved Posts</li>
-<li>Change Password</li>
-</ul>
-
-            </p>
 
 
 
@@ -130,7 +119,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>EditMyData(User: <a href="../classes/EditUser.html" target="_self">EditUser</a>, req: Request)</code>
+<code>EditMyData(User: <a href="../classes/EditUser.html" target="_self">EditUser</a>, req: <a href="../interfaces/AuthRequest.html" target="_self">AuthRequest</a>)</code>
                 </td>
             </tr>
 
@@ -144,14 +133,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/user/user.controller.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/user/user.controller.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>pass update user object and feilds are optional there can be pw or not but need to pass valid JWT in header</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -180,7 +171,7 @@
                                 <tr>
                                     <td>req</td>
                                     <td>
-                                            <code>Request</code>
+                                                <code><a href="../interfaces/AuthRequest.html" target="_self" >AuthRequest</a></code>
                                     </td>
 
                                     <td>
@@ -232,8 +223,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/user/user.controller.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/user/user.controller.ts:26</a></div>
                 </td>
             </tr>
 
@@ -275,7 +266,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>user payload</p>
+
                     </div>
                 </td>
             </tr>
@@ -289,24 +281,39 @@
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
 import { UserService } from &#x27;./user.service&#x27;;
 import { Request } from &#x27;express&#x27;;
-import { AuthSignup, EditUser } from &#x27;src/Typings&#x27;;
+import { AuthSignup, EditUser, UserDTO } from &#x27;src/Typings&#x27;;
 
 /**
  * Controller for User routs
  * - get UserInfo and Saved Posts
- * - Change Password
+ * - Change Password or body
  */
+interface AuthRequest extends Request {
+  user: UserDTO; // Replace &#x60;any&#x60; with the actual type of the &#x60;user&#x60; property
+}
+
 @UseGuards(AuthGuard(&#x27;jwt&#x27;))
 @Controller(&#x27;user&#x27;)
 export class UserController {
   constructor(private userService: UserService) {}
+  /**
+   *
+   * @param req @type {UserDTO} Incoming req GET route
+   * @returns {object} user payload
+   */
   @Get(&#x27;me&#x27;)
   MyData(@Req() req: Request) {
     return req.user;
   }
 
+  /**
+   * pass update user object and feilds are optional there can be pw or not but need to pass valid JWT in header
+   * @param User @type {EditUser} edit user payload
+   * @param req @type {EditUser} Incoming req with JWT in header
+   * @returns
+   */
   @Post(&#x27;edit&#x27;)
-  EditMyData(@Body() User: EditUser, @Req() req: Request) {
+  EditMyData(@Body() User: EditUser, @Req() req: AuthRequest) {
     return this.userService.editUser(User, req.user);
   }
 }

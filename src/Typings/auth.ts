@@ -40,3 +40,11 @@ export class Phnum {
   @IsPhoneNumber('IN')
   phnum: string;
 }
+
+export class UserDTO {
+  id: number;
+  CreatedAt: string;
+  UpdatedAt: string;
+  phonenum: string;
+  username: string;
+}

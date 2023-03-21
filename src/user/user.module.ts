@@ -3,7 +3,7 @@ import { UserService } from './user.service';
 import { UserController } from './user.controller';
 
 /**
- * Module to Setup User Logic to get their Saved Posts etc or change Password
+ * Module to Setup User Logic to get their userData or change Password
  */
 @Module({
   providers: [UserService],

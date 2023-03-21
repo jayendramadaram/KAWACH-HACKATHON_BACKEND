@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content interface">
                    <div class="content-data">
 
 
@@ -42,9 +42,12 @@
 
 
 
+
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >AuthLogin</li>
+  <li>Interfaces</li>
+  <li
+  >
+  AuthRequest</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,187 +65,139 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/Typings/auth.ts</code>
+            <code>src/user/user.controller.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Controller for User routs</p>
+<ul>
+<li>get UserInfo and Saved Posts</li>
+<li>Change Password or body</li>
+</ul>
 
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>Request</code>
+            </p>
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#user" 
+>
+                                            user
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
 
 
             <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#password" >password</a>
-                            </li>
-                            <li>
-                                <a href="#phnum" >phnum</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="user"></a>
+                                        <span class="name "><b>user</b>
+                                            <a href="#user">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>user:         <code><a href="../classes/UserDTO.html" target="_self" >UserDTO</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../classes/UserDTO.html" target="_self" >UserDTO</a></code>
+
+                                        </td>
+                                    </tr>
 
 
 
 
 
-
-        </tbody>
-    </table>
-</section>
-
-
-            <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="password"></a>
-                    <span class="name">
-                        <span ><b>password</b></span>
-                        <a href="#password"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @IsString()<br />@IsNotEmpty()<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/Typings/auth.ts:15</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="phnum"></a>
-                    <span class="name">
-                        <span ><b>phnum</b></span>
-                        <a href="#phnum"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @IsNotEmpty()<br />@IsPhoneNumber(&#x27;IN&#x27;)<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/Typings/auth.ts:12</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-
-
-
-
+                        </tbody>
+                    </table>
+            </section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  IsEmail,
-  IsNotEmpty,
-  IsOptional,
-  IsPhoneNumber,
-  IsString,
-} from &#x27;class-validator&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Get, Post, Req, UseGuards } from &#x27;@nestjs/common&#x27;;
+import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
+import { UserService } from &#x27;./user.service&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { AuthSignup, EditUser, UserDTO } from &#x27;src/Typings&#x27;;
 
-export class AuthLogin {
-  @IsNotEmpty()
-  @IsPhoneNumber(&#x27;IN&#x27;)
-  phnum: string;
-  @IsString()
-  @IsNotEmpty()
-  password: string;
+/**
+ * Controller for User routs
+ * - get UserInfo and Saved Posts
+ * - Change Password or body
+ */
+interface AuthRequest extends Request {
+  user: UserDTO; // Replace &#x60;any&#x60; with the actual type of the &#x60;user&#x60; property
 }
-export class AuthSignup extends AuthLogin {
-  constructor() {
-    super();
+
+@UseGuards(AuthGuard(&#x27;jwt&#x27;))
+@Controller(&#x27;user&#x27;)
+export class UserController {
+  constructor(private userService: UserService) {}
+  /**
+   *
+   * @param req @type {UserDTO} Incoming req GET route
+   * @returns {object} user payload
+   */
+  @Get(&#x27;me&#x27;)
+  MyData(@Req() req: Request) {
+    return req.user;
   }
-  @IsString()
-  @IsNotEmpty()
-  username: string;
-}
 
-export class EditUser {
-  @IsOptional()
-  @IsPhoneNumber(&#x27;IN&#x27;)
-  phnum: string;
-  @IsString()
-  @IsOptional()
-  password: string;
-  @IsString()
-  @IsOptional()
-  username: string;
-}
-
-export class Phnum {
-  @IsNotEmpty()
-  @IsPhoneNumber(&#x27;IN&#x27;)
-  phnum: string;
-}
-
-export class UserDTO {
-  id: number;
-  CreatedAt: string;
-  UpdatedAt: string;
-  phonenum: string;
-  username: string;
+  /**
+   * pass update user object and feilds are optional there can be pw or not but need to pass valid JWT in header
+   * @param User @type {EditUser} edit user payload
+   * @param req @type {EditUser} Incoming req with JWT in header
+   * @returns
+   */
+  @Post(&#x27;edit&#x27;)
+  EditMyData(@Body() User: EditUser, @Req() req: AuthRequest) {
+    return this.userService.editUser(User, req.user);
+  }
 }
 </code></pre>
     </div>
 </div>
-
 
 
 
@@ -276,8 +231,8 @@ export class UserDTO {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthLogin.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthRequest.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

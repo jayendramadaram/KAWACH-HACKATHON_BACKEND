@@ -20,6 +20,9 @@ import { join } from 'path';
 
 /**
  * Root Of the APP with request logging middleware implemented
+ *  @alias ServeStaticModule used for serving this docs over (docs)[/docs] Documentation is generated in `documentation` file
+ * @alias ConfigModule usedas Configservice to retrieve env elements
+ * @alias CacheModule used to init reddis cache store with ttl 1200 `20min`
  */
 @Module({
   imports: [
@@ -41,11 +44,8 @@ import { join } from 'path';
     }),
     AuthModule,
     PrismaModule,
-    // MailModule,
-
     UserModule,
     OtpModule,
-    // SavedPostModule,
   ],
   providers: [PrismaService, AppService],
   controllers: [AppController],
@@ -53,6 +53,7 @@ import { join } from 'path';
 export class AppModule implements NestModule {
   /**
    * Configuring the middleware for routes
+   * @alias LogRequest middleware logs type of request and route
    */
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(LogRequest).forRoutes('*');

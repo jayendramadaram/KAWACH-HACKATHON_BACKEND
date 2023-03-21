@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li >AuthLogin</li>
+  <li >UserDTO</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -83,10 +83,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#password" >password</a>
+                                <a href="#CreatedAt" >CreatedAt</a>
                             </li>
                             <li>
-                                <a href="#phnum" >phnum</a>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#phonenum" >phonenum</a>
+                            </li>
+                            <li>
+                                <a href="#UpdatedAt" >UpdatedAt</a>
+                            </li>
+                            <li>
+                                <a href="#username" >username</a>
                             </li>
                         </ul>
                     </td>
@@ -111,10 +120,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="password"></a>
+                    <a name="CreatedAt"></a>
                     <span class="name">
-                        <span ><b>password</b></span>
-                        <a href="#password"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>CreatedAt</b></span>
+                        <a href="#CreatedAt"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -124,18 +133,9 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @IsString()<br />@IsNotEmpty()<br />
-                        </code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/Typings/auth.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/Typings/auth.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -146,10 +146,36 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="phnum"></a>
+                    <a name="id"></a>
                     <span class="name">
-                        <span ><b>phnum</b></span>
-                        <a href="#phnum"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/Typings/auth.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="phonenum"></a>
+                    <span class="name">
+                        <span ><b>phonenum</b></span>
+                        <a href="#phonenum"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -159,18 +185,61 @@
 
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/Typings/auth.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UpdatedAt"></a>
+                    <span class="name">
+                        <span ><b>UpdatedAt</b></span>
+                        <a href="#UpdatedAt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @IsNotEmpty()<br />@IsPhoneNumber(&#x27;IN&#x27;)<br />
-                        </code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/Typings/auth.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/Typings/auth.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="username"></a>
+                    <span class="name">
+                        <span ><b>username</b></span>
+                        <a href="#username"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/Typings/auth.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -277,7 +346,7 @@ export class UserDTO {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthLogin.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserDTO.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
