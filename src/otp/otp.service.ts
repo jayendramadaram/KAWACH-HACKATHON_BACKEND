@@ -2,6 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Twilio } from 'twilio';
 
+/**
+ * Uses twillio underneath to Send OTP to verfied mobile Numbers
+ * returns Boolean
+ */
 @Injectable()
 export class OtpService {
   private twilioClient: Twilio;

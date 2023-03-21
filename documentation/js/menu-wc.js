@@ -127,13 +127,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/OtpModule.html" data-type="entity-link" >OtpModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-OtpModule-6a6d9eb51429f76c02d7fc88b015d3adf70ea9c3917d0246c2cd971ff20b5c718e9479e8d16256d118a01188efecab69c6580e17bd55b5d445e4bd5c6ee2426c"' : 'data-target="#xs-injectables-links-module-OtpModule-6a6d9eb51429f76c02d7fc88b015d3adf70ea9c3917d0246c2cd971ff20b5c718e9479e8d16256d118a01188efecab69c6580e17bd55b5d445e4bd5c6ee2426c"' }>
+                                        'data-target="#injectables-links-module-OtpModule-8bdda0096ede83684e71ed7c210489c1500ed35d6e5ebcfcb548855e1046ac558135520dc25d313e67afd22f837dcd9e488091b5eb516f95fb0e3b1b6c96beaf"' : 'data-target="#xs-injectables-links-module-OtpModule-8bdda0096ede83684e71ed7c210489c1500ed35d6e5ebcfcb548855e1046ac558135520dc25d313e67afd22f837dcd9e488091b5eb516f95fb0e3b1b6c96beaf"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-OtpModule-6a6d9eb51429f76c02d7fc88b015d3adf70ea9c3917d0246c2cd971ff20b5c718e9479e8d16256d118a01188efecab69c6580e17bd55b5d445e4bd5c6ee2426c"' :
-                                        'id="xs-injectables-links-module-OtpModule-6a6d9eb51429f76c02d7fc88b015d3adf70ea9c3917d0246c2cd971ff20b5c718e9479e8d16256d118a01188efecab69c6580e17bd55b5d445e4bd5c6ee2426c"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-OtpModule-8bdda0096ede83684e71ed7c210489c1500ed35d6e5ebcfcb548855e1046ac558135520dc25d313e67afd22f837dcd9e488091b5eb516f95fb0e3b1b6c96beaf"' :
+                                        'id="xs-injectables-links-module-OtpModule-8bdda0096ede83684e71ed7c210489c1500ed35d6e5ebcfcb548855e1046ac558135520dc25d313e67afd22f837dcd9e488091b5eb516f95fb0e3b1b6c96beaf"' }>
                                         <li class="link">
                                             <a href="injectables/OtpService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >OtpService</a>
                                         </li>

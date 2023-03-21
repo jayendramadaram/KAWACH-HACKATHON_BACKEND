@@ -66,6 +66,15 @@
             </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Default Route
+/ - uptime testing
+/docs - documentation Link</p>
+
+            </p>
 
 
 
@@ -85,9 +94,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#basicRoute" >basicRoute</a>
-                            </li>
-                            <li>
-                                <a href="#docsLink" >docsLink</a>
                             </li>
                         </ul>
                     </td>
@@ -133,8 +139,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="6"
-                            class="link-to-prism">src/app/app.controller.ts:6</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="11"
+                            class="link-to-prism">src/app/app.controller.ts:11</a></div>
                 </td>
             </tr>
 
@@ -150,56 +156,17 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="docsLink"></a>
-                    <span class="name">
-                        <span ><b>docsLink</b></span>
-                        <a href="#docsLink"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>docsLink()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get()<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/app.controller.ts:14</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get } from &#x27;@nestjs/common&#x27;;
 
+/**
+ * Default Route
+ * / - uptime testing
+ * /docs - documentation Link
+ */
 @Controller(&#x27;/&#x27;)
 export class AppController {
   @Get()
@@ -209,9 +176,6 @@ export class AppController {
         &#x27;GOOD Now struggle and figure out rest reading my /docs page &#x27;,
     };
   }
-
-  @Get()
-  docsLink() {}
 }
 </code></pre>
     </div>

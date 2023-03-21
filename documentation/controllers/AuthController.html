@@ -70,13 +70,15 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Controller to take all requests and send responses</p>
+                <p>Controller to take all requests and send responses
+Prefix --&gt; /auth</p>
+<p>Routes available [NO JWT PASS REQUIRED]</p>
 <ul>
 <li>/Signup</li>
 <li>/Signin</li>
-<li>/verfiyphno</li>
-<li>/forgotpw</li>
-<li>/verifyotp</li>
+<li>/requestOtp</li>
+<li>/verifyOTP</li>
+<li>/hehe</li>
 </ul>
 
             </p>
@@ -156,8 +158,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/auth/auth.controller.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/auth/auth.controller.ts:46</a></div>
                 </td>
             </tr>
 
@@ -232,8 +234,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/auth/auth.controller.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/auth/auth.controller.ts:36</a></div>
                 </td>
             </tr>
 
@@ -308,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/auth/auth.controller.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/auth/auth.controller.ts:26</a></div>
                 </td>
             </tr>
 
@@ -351,7 +353,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>JWT</p>
+
                     </div>
                 </td>
             </tr>
@@ -384,8 +387,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/auth/auth.controller.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/auth/auth.controller.ts:69</a></div>
                 </td>
             </tr>
 
@@ -462,8 +465,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/auth/auth.controller.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/auth/auth.controller.ts:58</a></div>
                 </td>
             </tr>
 
@@ -533,37 +536,60 @@ import { AuthService } from &#x27;./auth.service&#x27;;
 
 /**
  * Controller to take all requests and send responses
+ * Prefix --&gt; /auth
  *
+ * Routes available [NO JWT PASS REQUIRED]
  * - /Signup
  * - /Signin
- * - /verfiyphno
- * - /forgotpw
- * - /verifyotp
+ * - /requestOtp
+ * - /verifyOTP
+ * - /hehe
  */
 @Controller(&#x27;auth&#x27;)
 export class AuthController {
   constructor(private AuthService: AuthService) {}
 
+  /**
+   *
+   * @param body @type {AuthSignup} send body of this format
+   * @returns JWT
+   */
   @Post(&#x27;/Signup&#x27;)
   Signup(@Body() body: AuthSignup): Promise&lt;object&gt; {
     return this.AuthService.signupLogic(body);
   }
 
+  /**
+   *
+   * @param body @type {AuthLogin}
+   * @returns
+   */
   @Post(&#x27;/Signin&#x27;)
   Login(@Body() body: AuthLogin): Promise&lt;object&gt; {
     return this.AuthService.loginLogic(body);
   }
 
+  /**
+   *
+   * @param body @type {Phnum}
+   * @returns
+   */
   @Post(&#x27;/requestOtp&#x27;)
   ForgotPwd(@Body() body: Phnum): Promise&lt;object&gt; {
     console.log(body.phnum);
     return this.AuthService.forgotpasswordLogic(body.phnum);
   }
 
+  /**
+   *
+   * @param OTP @type {number}
+   * @param phnum @type {Phnum}
+   * @returns
+   */
   @Post(&#x27;/verifyOTP&#x27;)
   verifyOTP(
     @Body(&#x27;OTP&#x27;) OTP: number,
-    @Body(&#x27;email&#x27;) email: string,
+    @Body(&#x27;phnum&#x27;) email: string,
   ): Promise&lt;object&gt; {
     return this.AuthService.verifyLogic(OTP, email);
   }

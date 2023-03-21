@@ -9,7 +9,6 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
   // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-
 }
 
 model User {
@@ -19,13 +18,14 @@ model User {
   username String @db.VarChar(255)
   password String
   phnum String @unique
+  Userverifed Boolean @default(false)
   ReportedSpamNums Items[] @relation("Spam")
   ReportedFraudNums Items[] @relation("Fraud")
 }
 
 model Items {
   id Int @default(autoincrement()) @id
-  Item Int @unique 
+  Item String @unique 
   Type SpamType @default(Mobile)
   SpamReport User[] @relation("Spam")
   FraudNums User[] @relation("Fraud")
@@ -35,3 +35,18 @@ enum SpamType {
  Mobile
  Sms
 }
+
+enum CASETYPE {
+ Spam
+ Fraud
+}
+
+model predb {
+  id Int @default(autoincrement()) @id
+  item String @unique 
+  type SpamType @default(Mobile)
+  casetype CASETYPE @default(Spam)
+  context String 
+}
+
+

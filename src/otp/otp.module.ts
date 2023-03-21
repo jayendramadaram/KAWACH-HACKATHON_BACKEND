@@ -3,7 +3,7 @@ import { Global } from '@nestjs/common/decorators';
 import { OtpService } from './otp.service';
 
 /**
- *
+ *OTP service for other modules to inject and use
  */
 @Global()
 @Module({

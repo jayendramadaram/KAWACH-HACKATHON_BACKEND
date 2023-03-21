@@ -62,6 +62,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Uses twillio underneath to Send OTP to verfied mobile Numbers
+returns Boolean</p>
+
+            </p>
 
 
 
@@ -120,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/otp/otp.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/otp/otp.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +193,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/otp/otp.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/otp/otp.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -272,7 +280,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/otp/otp.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/otp/otp.service.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -289,6 +297,10 @@
 import { ConfigService } from &#x27;@nestjs/config&#x27;;
 import { Twilio } from &#x27;twilio&#x27;;
 
+/**
+ * Uses twillio underneath to Send OTP to verfied mobile Numbers
+ * returns Boolean
+ */
 @Injectable()
 export class OtpService {
   private twilioClient: Twilio;

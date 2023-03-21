@@ -111,7 +111,7 @@ export class AuthService {
 
   /**
    * Verify Otp Logic Where OTP is retrieved From Redis and verfied
-   * returns JWT
+   * returns JWT and also verfies user
    */
   async verifyLogic(OTP: number, phonenum: string): Promise<object> {
     const cacheotp = await this.cachemanager.get(phonenum);
@@ -122,6 +122,15 @@ export class AuthService {
       const user = await this.postgre.user.findUnique({
         where: {
           phnum: phonenum,
+        },
+      });
+      const userUpdate = await this.postgre.user.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          ...user,
+          Userverifed: true,
         },
       });
       await this.cachemanager.del(phonenum);

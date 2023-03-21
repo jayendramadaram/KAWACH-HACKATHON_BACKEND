@@ -321,8 +321,8 @@ Storing it in Redis and Emailing the User His Otp</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/auth/auth.service.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/auth/auth.service.ts:148</a></div>
                 </td>
             </tr>
 
@@ -550,7 +550,7 @@ and Creating User Object all edge cases are handled by Prisma and Nestjs</p>
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Verify Otp Logic Where OTP is retrieved From Redis and verfied
-returns JWT</p>
+returns JWT and also verfies user</p>
 </div>
 
                     <div class="io-description">
@@ -724,7 +724,7 @@ export class AuthService {
 
   /**
    * Verify Otp Logic Where OTP is retrieved From Redis and verfied
-   * returns JWT
+   * returns JWT and also verfies user
    */
   async verifyLogic(OTP: number, phonenum: string): Promise&lt;object&gt; {
     const cacheotp &#x3D; await this.cachemanager.get(phonenum);
@@ -735,6 +735,15 @@ export class AuthService {
       const user &#x3D; await this.postgre.user.findUnique({
         where: {
           phnum: phonenum,
+        },
+      });
+      const userUpdate &#x3D; await this.postgre.user.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          ...user,
+          Userverifed: true,
         },
       });
       await this.cachemanager.del(phonenum);

@@ -1,4 +1,5 @@
 import {
+  IsBoolean,
   IsEmail,
   IsNotEmpty,
   IsOptional,
@@ -47,4 +48,5 @@ export class UserDTO {
   UpdatedAt: string;
   phonenum: string;
   username: string;
+  verfied: boolean;
 }

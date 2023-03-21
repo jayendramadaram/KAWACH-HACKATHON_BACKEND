@@ -1,5 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 
+/**
+ * Default Route
+ * / - uptime testing
+ * /docs - documentation Link
+ */
 @Controller('/')
 export class AppController {
   @Get()
@@ -9,7 +14,4 @@ export class AppController {
         'GOOD Now struggle and figure out rest reading my /docs page ',
     };
   }
-
-  @Get()
-  docsLink() {}
 }
