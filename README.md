@@ -27,6 +27,6 @@ Pending tasks
 - query tables and calculate stats of an entity
 
 ##Dependencies and Architecture
-![Image](documentation/graph/dependencies.svg)
+![Image](./graph/dependencies.svg)
 
-![Image](documentation/modules/AppModule/dependencies.svg)
+![Image](./modules/AppModule/dependencies.svg)
