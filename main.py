@@ -8,14 +8,15 @@ urls = {
         '/auth/Signin',
         '/auth/requestOtp',
         '/auth/verifyOTP',
-        '/auth/hehe',
+        '/auth/hehe',  # get
     ],
     'user': [
-        '/user/me',
+        '/user/me',  # get
         '/user/edit'
     ],
     'core': [
         '/core/query'
+        '/core/mutate'
     ]
 }
 
@@ -48,6 +49,12 @@ data = {
             'Item': 'ZZZSCRY',
             'Type': 'MobileNum',
             'SmsContext': 'hehe thisss'
+        },
+        'mutate': {
+            'Item': 'ZZZSCRY',
+            'Type': 'MobileNum',
+            'Context': 'hehe thisss',
+            'type': 'Spam'
         }
     }
 }

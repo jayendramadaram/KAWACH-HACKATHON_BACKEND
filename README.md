@@ -48,7 +48,77 @@ Incomplete things [GUIDE TO IMPLEMENT NLP]
 - i have seeded database with dummy gen data can look up stuff in it
 - `main.py` has data organised already to test core endpoints
 
-##Dependencies and Architecture
+## How to use API
+
+> AVAILABLE APIS
+
+```js
+{
+    'auth': [
+        '/auth/Signup',
+        '/auth/Signin',
+        '/auth/requestOtp',
+        '/auth/verifyOTP',
+        '/auth/hehe',  # get
+    ],
+    'user': [
+        '/user/me',  # get
+        '/user/edit'
+    ],
+    'core': [
+        '/core/query'
+        '/core/mutate'
+    ]
+}
+
+```
+
+> Respective Payloads
+
+```js
+ 'auth': {
+        'Signup': {
+            'username': 'mikasa',
+            'phnum': '9100572305',
+            'password': 'erenily'
+        },
+        'Signin': {
+            'phnum': '9100572305',
+            'password': 'erenily'
+        },
+        'verify': {
+            'OTP': 919465,
+            'email': '9100572305'
+        },
+
+    },
+    'user': {
+        'edit': {
+            'username': 'Mikasa',
+            'phnum': '9100572305',
+            'password': 'erenIly'
+        }
+    },
+    'core': {
+        'query': {
+            'Item': 'ZZZSCRY',
+            'Type': 'MobileNum',
+            'SmsContext': 'hehe thisss'
+        },
+        'mutate': {
+            'Item': 'ZZZSCRY',
+            'Type': 'MobileNum',
+            'Context': 'hehe thisss',
+            'type': 'Spam'
+        }
+    }
+
+```
+
+<br>
+
+## Dependencies and Architecture
+
 ![Image](./graph/dependencies.svg)
 
 ![Image](./modules/AppModule/dependencies.svg)
