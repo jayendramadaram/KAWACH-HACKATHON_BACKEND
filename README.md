@@ -38,6 +38,15 @@ Pending tasks
 - or try `yarn start:prod` to start server in production mode
 - FOR DOCUMENTATION click here --> [docs](https://kawach-hackathonbackend-production.up.railway.app/docs)
 - for SERVER API endpoint click here --> [SERVER](https://kawach-hackathonbackend-production.up.railway.app/)
+- To view database u can use `prisma studio`
+
+Incomplete things [GUIDE TO IMPLEMENT NLP]
+
+- NLP trigger must be implemted
+- close this project and run it
+- got to `src/core/core.service.ts` write JS code to run NLP model
+- i have seeded database with dummy gen data can look up stuff in it
+- `main.py` has data organised already to test core endpoints
 
 ##Dependencies and Architecture
 ![Image](./graph/dependencies.svg)
