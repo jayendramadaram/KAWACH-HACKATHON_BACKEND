@@ -80,8 +80,70 @@
 <li>i have seeded database with dummy gen data can look up stuff in it</li>
 <li><code>main.py</code> has data organised already to test core endpoints</li>
 </ul>
-<p>##Dependencies and Architecture
-<img src="./graph/dependencies.svg" alt="Image" class="img-responsive"></p>
+<h2 id="how-to-use-api">How to use API</h2>
+<blockquote>
+<p>AVAILABLE APIS</p>
+</blockquote>
+<div><pre class="line-numbers"><code class="language-js">{
+    &#39;auth&#39;: [
+        &#39;/auth/Signup&#39;,
+        &#39;/auth/Signin&#39;,
+        &#39;/auth/requestOtp&#39;,
+        &#39;/auth/verifyOTP&#39;,
+        &#39;/auth/hehe&#39;,  # get
+    ],
+    &#39;user&#39;: [
+        &#39;/user/me&#39;,  # get
+        &#39;/user/edit&#39;
+    ],
+    &#39;core&#39;: [
+        &#39;/core/query&#39;
+        &#39;/core/mutate&#39;
+    ]
+}
+</code></pre></div><blockquote>
+<p>Respective Payloads</p>
+</blockquote>
+<div><pre class="line-numbers"><code class="language-js"> &#39;auth&#39;: {
+        &#39;Signup&#39;: {
+            &#39;username&#39;: &#39;mikasa&#39;,
+            &#39;phnum&#39;: &#39;9100572305&#39;,
+            &#39;password&#39;: &#39;erenily&#39;
+        },
+        &#39;Signin&#39;: {
+            &#39;phnum&#39;: &#39;9100572305&#39;,
+            &#39;password&#39;: &#39;erenily&#39;
+        },
+        &#39;verify&#39;: {
+            &#39;OTP&#39;: 919465,
+            &#39;email&#39;: &#39;9100572305&#39;
+        },
+
+    },
+    &#39;user&#39;: {
+        &#39;edit&#39;: {
+            &#39;username&#39;: &#39;Mikasa&#39;,
+            &#39;phnum&#39;: &#39;9100572305&#39;,
+            &#39;password&#39;: &#39;erenIly&#39;
+        }
+    },
+    &#39;core&#39;: {
+        &#39;query&#39;: {
+            &#39;Item&#39;: &#39;ZZZSCRY&#39;,
+            &#39;Type&#39;: &#39;MobileNum&#39;,
+            &#39;SmsContext&#39;: &#39;hehe thisss&#39;
+        },
+        &#39;mutate&#39;: {
+            &#39;Item&#39;: &#39;ZZZSCRY&#39;,
+            &#39;Type&#39;: &#39;MobileNum&#39;,
+            &#39;Context&#39;: &#39;hehe thisss&#39;,
+            &#39;type&#39;: &#39;Spam&#39;
+        }
+    }
+</code></pre></div><br>
+
+<h2 id="dependencies-and-architecture">Dependencies and Architecture</h2>
+<p><img src="./graph/dependencies.svg" alt="Image" class="img-responsive"></p>
 <p><img src="./modules/AppModule/dependencies.svg" alt="Image" class="img-responsive"></p>
 
 
