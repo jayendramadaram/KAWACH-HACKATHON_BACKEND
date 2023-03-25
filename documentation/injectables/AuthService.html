@@ -656,7 +656,7 @@ export class AuthService {
   async signupLogic(body: AuthSignup): Promise&lt;{ Jwt: string } | object&gt; {
     const hash &#x3D; await argon.hash(body.password);
     try {
-      const user &#x3D; await this.postgre.user.create({
+      const user &#x3D; await this.postgre.usertable.create({
         data: {
           phnum: body.phnum,
           password: hash,
@@ -683,7 +683,7 @@ export class AuthService {
   async loginLogic(body: AuthLogin): Promise&lt;object&gt; {
     const { phnum, password } &#x3D; body;
 
-    const user &#x3D; await this.postgre.user.findUnique({
+    const user &#x3D; await this.postgre.usertable.findUnique({
       where: {
         phnum: phnum,
       },
@@ -705,7 +705,7 @@ export class AuthService {
    */
   async forgotpasswordLogic(phonenum: string): Promise&lt;object&gt; {
     console.log(phonenum);
-    const user &#x3D; await this.postgre.user.findUnique({
+    const user &#x3D; await this.postgre.usertable.findUnique({
       where: {
         phnum: phonenum,
       },
@@ -732,18 +732,18 @@ export class AuthService {
       throw new ForbiddenException(&#x27;Session Expired or Not created&#x27;);
     }
     if (OTP &#x3D;&#x3D; cacheotp) {
-      const user &#x3D; await this.postgre.user.findUnique({
+      const user &#x3D; await this.postgre.usertable.findUnique({
         where: {
           phnum: phonenum,
         },
       });
-      const userUpdate &#x3D; await this.postgre.user.update({
+      const userUpdate &#x3D; await this.postgre.usertable.update({
         where: {
           id: user.id,
         },
         data: {
           ...user,
-          Userverifed: true,
+          userverifed: true,
         },
       });
       await this.cachemanager.del(phonenum);

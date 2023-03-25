@@ -10,6 +10,7 @@ Stack used
 - Typescript
 - PassportJs - Auth and jwt management
 - Twillio - SMS messaging
+- Yarn - as Package manager
 
 ### How did it Go
 
@@ -25,6 +26,18 @@ Pending tasks
 - Lay pipelines for 6 types of fraud detection
 - trigger ml models
 - query tables and calculate stats of an entity
+
+<br>
+
+## Guide To RUN/BUILD:
+
+- close this git repo using git clone `<repo URL>`
+- install required dependecies using `yarn`
+- Create and update `.env` files according to .`env.example` file
+- try `yarn start:dev` to start server in dev mode
+- or try `yarn start:prod` to start server in production mode
+- FOR DOCUMENTATION click here --> [docs](https://kawach-hackathonbackend-production.up.railway.app/docs)
+- for SERVER API endpoint click here --> [SERVER](https://kawach-hackathonbackend-production.up.railway.app/)
 
 ##Dependencies and Architecture
 ![Image](./graph/dependencies.svg)

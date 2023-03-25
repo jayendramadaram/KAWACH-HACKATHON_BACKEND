@@ -66,7 +66,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>This is a Middleware is designed to log the incomming requests for debugging and analysis</p>
+                <p>This is a Middleware is designed to log the incomming requests for debugging and analysis
+METHOD + ROUTE</p>
 
             </p>
 
@@ -126,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/middleware/requestLog.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/middleware/requestLog.ts:10</a></div>
                 </td>
             </tr>
 
@@ -210,6 +211,7 @@ import { NextFunction, Request, Response } from &#x27;express&#x27;;
 
 /**
  * This is a Middleware is designed to log the incomming requests for debugging and analysis
+ * METHOD + ROUTE
  */
 @Injectable()
 export class LogRequest implements NestMiddleware {

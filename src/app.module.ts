@@ -17,6 +17,7 @@ import { AppController } from './app/app.controller';
 import { AppService } from './app/app.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { CoreModule } from './core/core.module';
 
 /**
  * Root Of the APP with request logging middleware implemented
@@ -46,6 +47,7 @@ import { join } from 'path';
     PrismaModule,
     UserModule,
     OtpModule,
+    CoreModule,
   ],
   providers: [PrismaService, AppService],
   controllers: [AppController],

@@ -1,0 +1,992 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>crudapp documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">crudapp documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >CoreService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/core/core.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleMobile" >handleMobile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleSms" >handleSms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mutateMobile" >mutateMobile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mutateSMS" >mutateSMS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#RunNlp" >RunNlp</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(postgre: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, config: ConfigService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/core/core.service.ts:9</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>postgre</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>config</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleMobile"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>handleMobile</b></span>
+                        <a href="#handleMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleMobile(phnum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/core/core.service.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>phnum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/QueryReturn.html" target="_self" >Promise&lt;QueryReturn&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleSms"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>handleSms</b></span>
+                        <a href="#handleSms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleSms(header: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, Context: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/core/core.service.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>header</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Context</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/QueryReturn.html" target="_self" >Promise&lt;QueryReturn&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mutateMobile"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>mutateMobile</b></span>
+                        <a href="#mutateMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mutateMobile(phnum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, type: <a href="../undefineds/ReportType.html" target="_self">ReportType</a>, user: <a href="../classes/UserDTO.html" target="_self">UserDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/core/core.service.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>phnum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#ReportType" target="_self" >ReportType</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/UserDTO.html" target="_self" >UserDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mutateSMS"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>mutateSMS</b></span>
+                        <a href="#mutateSMS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mutateSMS(Sms: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, Context: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, type: <a href="../undefineds/ReportType.html" target="_self">ReportType</a>, user: <a href="../classes/UserDTO.html" target="_self">UserDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/core/core.service.ts:239</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sms</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Context</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#ReportType" target="_self" >ReportType</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/UserDTO.html" target="_self" >UserDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RunNlp"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>RunNlp</b></span>
+                        <a href="#RunNlp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>RunNlp(Context: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, matches: Array<string>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/core/core.service.ts:17</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Takes input as mobile num checks it in predb and</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Context</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>matches</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/enumerations.html#ReportType" target="_self" >Promise&lt;ReportType&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import { items } from &#x27;@prisma/client&#x27;;
+import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
+import { UserDTO } from &#x27;src/Typings&#x27;;
+import { ItemType, QueryReturn, ReportType } from &#x27;./dto&#x27;;
+
+@Injectable()
+export class CoreService {
+  constructor(private postgre: PrismaService, private config: ConfigService) {}
+  /**
+   * Takes input as mobile num checks it in predb and
+   *
+   * @param phnum @type {string}
+   * @returns {QueryReturn}
+   */
+  async RunNlp(Context: string, matches: Array&lt;string&gt;): Promise&lt;ReportType&gt; {
+    const options &#x3D; [ReportType.Fraud, ReportType.Normal, ReportType.Spam];
+    const randomIndex &#x3D; Math.floor(Math.random() * options.length);
+    return options[randomIndex];
+  }
+
+  async handleMobile(phnum: string): Promise&lt;QueryReturn&gt; {
+    const report &#x3D; await this.postgre.predb.findUnique({
+      where: {
+        item: phnum,
+      },
+    });
+    if (report) {
+      const type &#x3D;
+        report.casetype &#x3D;&#x3D; &#x27;Spam&#x27; ? ReportType.Spam : ReportType.Fraud;
+      return {
+        Type: type,
+        Context: report.context,
+      };
+    } else {
+      const item &#x3D; await this.postgre.items.findUnique({
+        where: {
+          item: phnum,
+        },
+        include: {
+          fraudnums: {
+            select: {
+              id: true,
+            },
+          },
+          spamreport: {
+            select: {
+              id: true,
+            },
+          },
+        },
+      });
+      if (item) {
+        await this.postgre.items.update({
+          where: {
+            id: item.id,
+          },
+          data: {
+            interactions: item.interactions + 1,
+          },
+        });
+        const reports &#x3D; item.fraudnums.length + item.spamreport.length;
+        if (reports / item.interactions &gt; 0.05 &amp;&amp; item.interactions &gt; 10) {
+          const type &#x3D;
+            item.fraudnums.length &gt; item.spamreport.length
+              ? ReportType.Fraud
+              : ReportType.Spam;
+          return {
+            Type: type,
+          };
+        } else {
+          return {
+            Type: ReportType.Normal,
+          };
+        }
+      } else {
+        const createitem &#x3D; await this.postgre.items.create({
+          data: {
+            interactions: 1,
+            type: &#x27;Mobile&#x27;,
+            item: phnum,
+          },
+        });
+        return {
+          Type: ReportType.Normal,
+          Context: &#x27;New Item Created&#x27;,
+        };
+      }
+    }
+  }
+
+  async handleSms(header: string, Context: string): Promise&lt;QueryReturn&gt; {
+    const report &#x3D; await this.postgre.predb.findUnique({
+      where: {
+        item: header,
+      },
+    });
+    /**
+     * regex differentiation
+     * search regex
+     * context NLP prediction
+     * regex addition to db
+     *
+     */
+    const regex &#x3D;
+      /(\b[13][a-km-zA-HJ-NP-Z0-9]{25,34}\b)|(\b[6-9]\d{9}\b)|(\b(?:[a-zA-Z0-9._%+-]+@(?:apl|abfspay|fbl|idfcbank|okaxis|okicici|axisbank|icici|yesbank|ibl|ybl))\b)|(\b(?:https?:\/\/|www\.)\S+\b)/g;
+
+    const matches &#x3D; Context.match(regex);
+    if (report) {
+      const type &#x3D;
+        report.casetype &#x3D;&#x3D; &#x27;Spam&#x27; ? ReportType.Spam : ReportType.Fraud;
+      return {
+        Type: type,
+        Context: report.context,
+      };
+    } else {
+      if (matches.length &gt; 0) {
+        for (const item of matches) {
+          const report &#x3D; await this.postgre.predb.findUnique({
+            where: {
+              item: item,
+            },
+          });
+          if (report) {
+            const type &#x3D;
+              report.casetype &#x3D;&#x3D; &#x27;Spam&#x27; ? ReportType.Spam : ReportType.Fraud;
+            return {
+              Type: type,
+              Context: report.context,
+            };
+          }
+        }
+      }
+      const item &#x3D; await this.postgre.items.findUnique({
+        where: {
+          item: header,
+        },
+        include: {
+          fraudnums: {
+            select: {
+              id: true,
+            },
+          },
+          spamreport: {
+            select: {
+              id: true,
+            },
+          },
+        },
+      });
+      if (item) {
+        await this.postgre.items.update({
+          where: {
+            id: item.id,
+          },
+          data: {
+            interactions: item.interactions + 1,
+          },
+        });
+        const reports &#x3D; item.fraudnums.length + item.spamreport.length;
+        if (reports / item.interactions &gt; 0.05 &amp;&amp; item.interactions &gt; 10) {
+          const type &#x3D;
+            item.fraudnums.length &gt; item.spamreport.length
+              ? ReportType.Fraud
+              : ReportType.Spam;
+          return {
+            Type: type,
+          };
+        }
+      }
+      const createitem &#x3D; await this.postgre.items.create({
+        data: {
+          interactions: 1,
+          type: &#x27;Sms&#x27;,
+          item: header,
+        },
+      });
+      const type &#x3D; await this.RunNlp(Context, matches);
+      return {
+        Type: type,
+        Context: &#x60;This Subjected SMS is suspected to be ${type}&#x60;,
+      };
+    }
+  }
+
+  async mutateMobile(
+    phnum: string,
+    type: ReportType,
+    user: UserDTO,
+  ): Promise&lt;{ Context: string }&gt; {
+    let item: items;
+    item &#x3D; await this.postgre.items.findUnique({
+      where: {
+        item: phnum,
+      },
+    });
+    if (!item) {
+      item &#x3D; await this.postgre.items.create({
+        data: {
+          interactions: 1,
+          type: &#x27;Mobile&#x27;,
+          item: phnum,
+        },
+      });
+    }
+    if (type &#x3D;&#x3D; ReportType.Spam) {
+      await this.postgre.usertable.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          reportedSpamNums: {
+            connect: {
+              id: item.id,
+            },
+          },
+        },
+      });
+    } else {
+      await this.postgre.usertable.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          reportedFraudNums: {
+            connect: {
+              id: item.id,
+            },
+          },
+        },
+      });
+    }
+    return {
+      Context: &#x27;Changes Made&#x27;,
+    };
+  }
+
+  async mutateSMS(
+    Sms: string,
+    Context: string,
+    type: ReportType,
+    user: UserDTO,
+  ) {
+    let item: items;
+    item &#x3D; await this.postgre.items.findUnique({
+      where: {
+        item: Sms,
+      },
+    });
+    if (!item) {
+      item &#x3D; await this.postgre.items.create({
+        data: {
+          interactions: 1,
+          type: &#x27;Mobile&#x27;,
+          item: Sms,
+        },
+      });
+    }
+    if (type &#x3D;&#x3D; ReportType.Spam) {
+      await this.postgre.usertable.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          reportedSpamNums: {
+            connect: {
+              id: item.id,
+            },
+          },
+        },
+      });
+    } else {
+      await this.postgre.usertable.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          reportedFraudNums: {
+            connect: {
+              id: item.id,
+            },
+          },
+        },
+      });
+    }
+    return {
+      Context: &#x27;Changes Made&#x27;,
+    };
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CoreService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

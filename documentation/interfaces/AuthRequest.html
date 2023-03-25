@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/user/user.controller.ts</code>
+            <code>src/core/core.controller.ts</code>
         </p>
 
 
@@ -73,11 +73,12 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Controller for User routs</p>
+                <p>core has two Routes for both SMS and Mobile</p>
 <ul>
-<li>get UserInfo and Saved Posts</li>
-<li>Change Password or body</li>
+<li>core/query  - call it before every call or sms in coming to predict it as fraud or spam or normal</li>
+<li>core/muttate - call it for update or report a sms or number</li>
 </ul>
+<p>query rout must be called before incomming call or incoming msg which returns is a msg/sms is spam or ham or fraud and also related context</p>
 
             </p>
 
@@ -155,44 +156,75 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Get, Post, Req, UseGuards } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Post, Req, UseGuards } from &#x27;@nestjs/common&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
-import { UserService } from &#x27;./user.service&#x27;;
-import { Request } from &#x27;express&#x27;;
-import { AuthSignup, EditUser, UserDTO } from &#x27;src/Typings&#x27;;
+import { UserDTO } from &#x27;src/Typings&#x27;;
+import { CoreService } from &#x27;./core.service&#x27;;
+import { ItemType, MuttateDto, QueryDto, QueryReturn, ReportType } from &#x27;./dto&#x27;;
 
 /**
- * Controller for User routs
- * - get UserInfo and Saved Posts
- * - Change Password or body
+ * core has two Routes for both SMS and Mobile
+ * - core/query  - call it before every call or sms in coming to predict it as fraud or spam or normal
+ * - core/muttate - call it for update or report a sms or number
+ *
+ * query rout must be called before incomming call or incoming msg which returns is a msg/sms is spam or ham or fraud and also related context
+ *
  */
+
 interface AuthRequest extends Request {
   user: UserDTO; // Replace &#x60;any&#x60; with the actual type of the &#x60;user&#x60; property
 }
 
 @UseGuards(AuthGuard(&#x27;jwt&#x27;))
-@Controller(&#x27;user&#x27;)
-export class UserController {
-  constructor(private userService: UserService) {}
+@Controller(&#x27;core&#x27;)
+export class CoreController {
+  constructor(private coreService: CoreService) {}
+
   /**
    *
-   * @param req @type {UserDTO} Incoming req GET route
-   * @returns {object} user payload
+   * @param req @type {AuthRequest}
+   * @param body @type {QueryDto}
+   * @returns @type {QueryReturn}
    */
-  @Get(&#x27;me&#x27;)
-  MyData(@Req() req: Request) {
-    return req.user;
+  @Post(&#x27;query&#x27;)
+  QueryContext(
+    @Req() req: AuthRequest,
+    @Body() body: QueryDto,
+  ): Promise&lt;QueryReturn&gt; {
+    if (body.Type &#x3D;&#x3D; ItemType.MobileNum) {
+      return this.coreService.handleMobile(body.Item);
+    } else {
+      return this.coreService.handleSms(body.Item, body.SmsContext);
+    }
   }
 
   /**
-   * pass update user object and feilds are optional there can be pw or not but need to pass valid JWT in header
-   * @param User @type {EditUser} edit user payload
-   * @param req @type {EditUser} Incoming req with JWT in header
+   *
+   * @param req @type {AuthRequest}
+   * @param body @type {MuttateDto}
    * @returns
    */
-  @Post(&#x27;edit&#x27;)
-  EditMyData(@Body() User: EditUser, @Req() req: AuthRequest) {
-    return this.userService.editUser(User, req.user);
+  @Post(&#x27;mutate&#x27;)
+  mutate(
+    @Req() req: AuthRequest,
+    @Body() body: MuttateDto,
+  ): Promise&lt;{ Context: string }&gt; {
+    if (req.user.verfied &#x3D;&#x3D;&#x3D; true) {
+      if (body.Type &#x3D;&#x3D; ItemType.MobileNum) {
+        return this.coreService.mutateMobile(body.Item, body.Report, req.user);
+      } else {
+        return this.coreService.mutateSMS(
+          body.Item,
+          body.Context,
+          body.Report,
+          req.user,
+        );
+      }
+    } else {
+      return Promise.resolve({
+        Context: &#x27;User Not verified Cant Make Changes&#x27;,
+      });
+    }
   }
 }
 </code></pre>

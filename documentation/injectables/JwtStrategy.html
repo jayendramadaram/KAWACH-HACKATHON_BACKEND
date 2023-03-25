@@ -66,7 +66,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>JWT strategy</p>
+                <p>JWT strategy exported to other classes</p>
 
             </p>
 
@@ -251,7 +251,7 @@ import { ExtractJwt, Strategy } from &#x27;passport-jwt&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
 
 /**
- * JWT strategy
+ * JWT strategy exported to other classes
  */
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -263,7 +263,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: { sub: number }) {
-    const user &#x3D; await this.prisma.user.findUnique({
+    const user &#x3D; await this.prisma.usertable.findUnique({
       where: {
         id: payload.sub,
       },

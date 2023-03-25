@@ -283,7 +283,7 @@ export class UserService {
     if (User.password) {
       const hash &#x3D; await argon.hash(User.password);
       delete User.password;
-      const user &#x3D; await this.postgre.user.update({
+      const user &#x3D; await this.postgre.usertable.update({
         where: {
           id: dbuser.id,
         },
@@ -295,7 +295,7 @@ export class UserService {
       delete user.password;
       return user;
     } else {
-      const user &#x3D; await this.postgre.user.update({
+      const user &#x3D; await this.postgre.usertable.update({
         where: {
           id: dbuser.id,
         },

@@ -23,7 +23,7 @@ export class UserController {
    * @returns {object} user payload
    */
   @Get('me')
-  MyData(@Req() req: Request) {
+  MyData(@Req() req: Request): object {
     return req.user;
   }
 

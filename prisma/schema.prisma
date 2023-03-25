@@ -11,29 +11,39 @@ datasource db {
   // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model User {
+model usertable {
   id Int @default(autoincrement()) @id
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedat DateTime @updatedAt
   username String @db.VarChar(255)
   password String
   phnum String @unique
-  Userverifed Boolean @default(false)
-  ReportedSpamNums Items[] @relation("Spam")
-  ReportedFraudNums Items[] @relation("Fraud")
+  userverifed Boolean @default(false)
+  reportedSpamNums items[] @relation("Spam")
+  reportedFraudNums items[] @relation("Fraud")
 }
 
-model Items {
+model items {
   id Int @default(autoincrement()) @id
-  Item String @unique 
-  Type SpamType @default(Mobile)
-  SpamReport User[] @relation("Spam")
-  FraudNums User[] @relation("Fraud")
+  item String @unique 
+  type itemType @default(Mobile)
+  interactions Int
+  spamreport usertable[] @relation("Spam")
+  fraudnums usertable[] @relation("Fraud")
+}
+
+enum itemType {
+  Mobile
+  Sms
 }
 
 enum SpamType {
  Mobile
- Sms
+ SmsHeader
+ Btcaddr
+ Upiaddr
+  Bankacc
+  Url
 }
 
 enum CASETYPE {
@@ -46,7 +56,7 @@ model predb {
   item String @unique 
   type SpamType @default(Mobile)
   casetype CASETYPE @default(Spam)
-  context String 
+  context String @default("")
 }
 
 

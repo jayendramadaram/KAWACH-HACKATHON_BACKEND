@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 
 /**
  * This is a Middleware is designed to log the incomming requests for debugging and analysis
+ * METHOD + ROUTE
  */
 @Injectable()
 export class LogRequest implements NestMiddleware {

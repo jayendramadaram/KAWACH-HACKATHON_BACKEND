@@ -3,7 +3,6 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './JwtStrategy';
-import { OtpService } from 'src/otp/otp.service';
 import { OtpModule } from 'src/otp/otp.module';
 
 /**

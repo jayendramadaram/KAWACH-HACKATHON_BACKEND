@@ -13,6 +13,9 @@ urls = {
     'user': [
         '/user/me',
         '/user/edit'
+    ],
+    'core': [
+        '/core/query'
     ]
 }
 
@@ -39,15 +42,23 @@ data = {
             'phnum': '9100572305',
             'password': 'erenIly'
         }
+    },
+    'core': {
+        'query': {
+            'Item': 'ZZZSCRY',
+            'Type': 'MobileNum',
+            'SmsContext': 'hehe thisss'
+        }
     }
 }
 
 
-JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTY3OTMzODc4MywiZXhwIjoxNjc5NDI1MTgzfQ.ySp80ZIHb1ney46hlHDszJXANBBvpnaA4XDpc4SwQfc"
+JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE0LCJpYXQiOjE2Nzk2NDg4NzUsImV4cCI6MTY3OTczNTI3NX0.h6EMVD2QCtuRUdn1CBj7Ft4QZJHrwVD12J3ER-akREU"
 resp = requests.post(
-    f'http://localhost:3333{urls["user"][1]}', data=data['user']['edit'], headers={
+    f'http://localhost:3333{urls["core"][0]}', data=data['core']['query'], headers={
         'Authorization': f'Bearer {JWT_TOKEN}'
-    })
+    }
+)
 
 # resp = requests.get(f'http://localhost:3333{urls["user"][0]}', headers={
 #     'Authorization': f'Bearer {JWT_TOKEN}'
